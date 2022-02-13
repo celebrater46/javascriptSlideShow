@@ -46,7 +46,6 @@ const changeImage = () => {
     }
 
     let opacityZero = el1.style.opacity * 100;
-    // フェードアウトの処理（opacityを100ミリ秒ごとに0.1づつ減らす）
     let intervalZero = setInterval( () => {
         opacityZero = opacityZero - 10;
         el1.style.opacity = opacityZero / 100;
@@ -58,7 +57,6 @@ const changeImage = () => {
     }, 100);
 
     let opacityOne = el2.style.opacity * 100;
-    // フェードインの処理（opacityを100ミリ秒ごとに0.1づつ増やす）
     let intervalOne = setInterval( () => {
         opacityOne = opacityOne + 10;
         el2.style.opacity = opacityOne / 100;
