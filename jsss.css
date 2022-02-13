@@ -29,6 +29,13 @@ img#test{
 }
 
 @media screen and (max-width: 1000px){
+    div.jsss.box{
+        height: 150vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     img#pc1, img#pc2{
         position: fixed;
         right: -200%;

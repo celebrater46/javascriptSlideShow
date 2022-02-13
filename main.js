@@ -32,7 +32,7 @@ const resetOpacity = () => {
             el1.style.opacity = 1;
             el2.style.opacity = 0;
             el2.src = getNextImage();
-        }, 100);
+        }, 1000);
         finished = [false, false];
     }
 }
