@@ -77,9 +77,3 @@ const startSlideShow = () => {
 const stopSlideShow = () => {
     clearInterval(intervalId);
 }
-
-// console.log("hello");
-
-const clickTest = () => {
-    console.log("hello world");
-}
