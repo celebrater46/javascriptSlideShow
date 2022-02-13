@@ -88,16 +88,35 @@ img#test{
         font-size: 40px;
     }
 
-    img#pc{
+    div.container{
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    img#pc1, img#pc2{
         position: fixed;
         right: -200%;
     }
 
-    img#phone{
+    img#phone1, img#phone2{
         position: static;
         right: auto;
-        width: 95%;
         height: auto;
+    }
+
+    img#phone2{
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    button{
+        display: block;
+        font-size: 1.5rem;
+        width: 60vw;
+        padding: 2vh 0;
     }
 
     footer{

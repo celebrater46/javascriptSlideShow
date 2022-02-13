@@ -13,7 +13,7 @@ const el1 = document.getElementById(isPc ? "pc1" : "phone1");
 const el2 = document.getElementById(isPc ? "pc2" : "phone2");
 let intervalId;
 let finished = [];
-let nth = 1; // 今表示されているのは何枚めの画像か
+let nth = 1; // 次に表示されるのは何枚めの画像か
 
 // if(window.innerWidth > maxWidth){
 //     const el = document.getElementById("pc");
@@ -25,8 +25,11 @@ let nth = 1; // 今表示されているのは何枚めの画像か
 const getNextImage = () => {
     // const src = el1.src.substr(-5);
     const max = isPc ? xImages : yImages;
+    const xy = isPc ? "x/" : "y/";
+    // nth = nth > max ? 1 : nth + 1;
     nth = nth >= max ? 1 : nth + 1;
-    return dir + "x/" + nth.toString() + ext;
+    console.log("getNextImage is working: " + dir + "x/" + nth.toString() + ext);
+    return dir + xy + nth.toString() + ext;
     // switch (nth){
     //     case "0.jpg": return "1.jpg";
     //     case "1.jpg": return "0.jpg";
@@ -50,6 +53,9 @@ const resetOpacity = () => {
 }
 
 const changeImage = () => {
+    // const max = isPc ? xImages : yImages;
+    console.log("nth: " + nth);
+    // nth = nth >= max ? 1 : nth + 1;
     if(el1.style.opacity === "" || el1.style.opacity === 0) {
         el1.style.opacity = 1;
     }
@@ -62,7 +68,7 @@ const changeImage = () => {
     let intervalZero = setInterval( () => {
         opacityZero = opacityZero - 10;
         el1.style.opacity = opacityZero / 100;
-        console.log("opacityZero: " + opacityZero);
+        // console.log("opacityZero: " + opacityZero);
         if(el1.style.opacity <= 0){
             clearInterval(intervalZero);
             finished[0] = true;
@@ -75,7 +81,7 @@ const changeImage = () => {
     let intervalOne = setInterval( () => {
         opacityOne = opacityOne + 10;
         el2.style.opacity = opacityOne / 100;
-        console.log("opacityOne: " + opacityOne);
+        // console.log("opacityOne: " + opacityOne);
         if(el2.style.opacity >= 1){
             clearInterval(intervalOne);
             finished[1] = true;
