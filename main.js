@@ -28,7 +28,7 @@ const resetOpacity = () => {
     if(finished[0] && finished[1]){
         const nextImage = el2.src;
         el1.src = nextImage;
-        window.setTimeout(() => {
+        setTimeout(() => {
             el1.style.opacity = 1;
             el2.style.opacity = 0;
             el2.src = getNextImage();
@@ -46,7 +46,7 @@ const changeImage = () => {
     }
 
     let opacityZero = el1.style.opacity * 100;
-    let intervalZero = setInterval( () => {
+    let intervalZero = setInterval(() => {
         opacityZero = opacityZero - 10;
         el1.style.opacity = opacityZero / 100;
         if(el1.style.opacity <= 0){
@@ -57,7 +57,7 @@ const changeImage = () => {
     }, 100);
 
     let opacityOne = el2.style.opacity * 100;
-    let intervalOne = setInterval( () => {
+    let intervalOne = setInterval(() => {
         opacityOne = opacityOne + 10;
         el2.style.opacity = opacityOne / 100;
         if(el2.style.opacity >= 1){
@@ -69,7 +69,7 @@ const changeImage = () => {
 }
 
 const startSlideShow = () => {
-    intervalId = window.setInterval(changeImage, interval);
+    intervalId = setInterval(changeImage, interval);
 }
 
 const stopSlideShow = () => {
