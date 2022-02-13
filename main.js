@@ -13,7 +13,7 @@ const el1 = document.getElementById(isPc ? "pc1" : "phone1");
 const el2 = document.getElementById(isPc ? "pc2" : "phone2");
 const interval = 3000; // 画像切替周期（ミリ秒）
 let intervalId;
-let finished = [];
+let finished = [false, false];
 let nth = 2; // 次に表示されるのは何枚めの画像か
 
 const getNextImage = () => {
