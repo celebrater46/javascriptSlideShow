@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+html{
+    font-size: 19px;
+}
+
+body {
+    background-color: black;
+    color: silver;
+    text-align: center;
+}
+
+div.container{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+a{
+    color: goldenrod;
+    text-decoration: none;
+}
+
+a:hover{
+    color: gold;
+}
+
+img{
+    border: 1px solid gray;
+}
+
+footer{
+    /*font-size: 1rem;*/
+    width: 100%;
+    margin: 0;
+    padding: 15px 0 15px;
+    /*background-color: #333333;*/
+    border-top: 4px double gray;
+    /*position: absolute;*/
+    bottom: 0;
+    text-align: center;
+}
+
+footer div{
+    font-size: 1rem;
+}
+
+div.container img.pc{
+    width: 1200px;
+    height: auto;
+}
+
+div.container img.phone{
+    position: fixed;
+    right: -200%;
+}
+
+@media screen and (max-width: 1000px){
+    html{
+        font-size: 40px;
+    }
+
+    div.container img.pc{
+        position: fixed;
+        right: -200%;
+    }
+
+    div.container img.phone{
+        position: static;
+        right: auto;
+        width: 95%;
+        height: auto;
+    }
+
+    footer{
+        position: relative;
+    }
+}
