@@ -11,6 +11,7 @@ const maxWidth = 1000; // 縦長画像を表示する限界幅
 const isPc = window.innerWidth > maxWidth; // true or false
 const el1 = document.getElementById(isPc ? "pc1" : "phone1");
 const el2 = document.getElementById(isPc ? "pc2" : "phone2");
+const interval = 3000; // 画像切替周期（ミリ秒）
 let intervalId;
 let finished = [];
 let nth = 2; // 次に表示されるのは何枚めの画像か
@@ -70,7 +71,7 @@ const changeImage = () => {
 }
 
 const startSlideShow = () => {
-    intervalId = window.setInterval(changeImage, 3000);
+    intervalId = window.setInterval(changeImage, interval);
 }
 
 const stopSlideShow = () => {
