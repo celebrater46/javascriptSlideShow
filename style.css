@@ -44,14 +44,19 @@ footer div{
     font-size: 1rem;
 }
 
-div.container img.pc{
+img#pc{
     width: 1200px;
     height: auto;
 }
 
-div.container img.phone{
+img#phone{
     position: fixed;
     right: -200%;
+}
+
+img#test{
+    position: fixed;
+    right: -5000px;
 }
 
 @media screen and (max-width: 1000px){
@@ -59,12 +64,12 @@ div.container img.phone{
         font-size: 40px;
     }
 
-    div.container img.pc{
+    img#pc{
         position: fixed;
         right: -200%;
     }
 
-    div.container img.phone{
+    img#phone{
         position: static;
         right: auto;
         width: 95%;

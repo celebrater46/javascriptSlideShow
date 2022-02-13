@@ -1,23 +1,15 @@
 "use strict";
 
-const testLine = "「これは……テストでーす――」";
-const div = document.getElementById("p-1");
+// x には横長画像、y には縦長画像を入れる
+// 拡張子は固定、名前は 0 から始まる数字
 
-const rotateChar = (line) => {
-    let str = line;
-    // str = str.replace(/「/g, "<span class='rotate'>「</span>");
-    // str = str.replace(/」/g, "<span class='rotate'>」</span>");
-    // str = str.replace(/ー/g, "<span class='rotate'>ー</span>");
-    return str;
+const ext = ".jpg";
+const dir = "img/";
+const maxWidth = 1000; // 縦長画像を表示する限界幅
+
+if(window.innerWidth > maxWidth){
+    const el = document.getElementById("pc");
+    el.src = dir + "x/" + 1 + ext;
+} else {
+    const el = document.getElementById("phone");
 }
-
-const createLines = (line) => {
-    let str = "";
-    for (let i = 0; i < 15; i++){
-        const rotated = rotateChar(line);
-        str += "<p id='line-" + i + "'>" + rotated + "</p>";
-    }
-    return str;
-}
-
-div.innerHTML = createLines(testLine);
