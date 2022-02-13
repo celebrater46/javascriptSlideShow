@@ -3,7 +3,7 @@
 // x には横長画像、y には縦長画像を入れる
 // 拡張子は固定、名前は 1 から始まる数字
 
-const ext = ".jpg";
+const ext = ".png";
 const dir = "img/";
 const xImages = 5; // 横長画像の枚数
 const yImages = 5; // 縦長画像の枚数
