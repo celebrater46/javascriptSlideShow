@@ -55,34 +55,6 @@ footer div{
     font-size: 1rem;
 }
 
-img#pc1, img#pc2{
-    width: auto;
-    height: 640px;
-}
-
-img#pc2{
-    opacity: 0;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-}
-
-img#phone1, img#phone2{
-    width: 95vw;
-    position: fixed;
-    right: -200%;
-}
-
-img#phone2{
-    opacity: 0;
-}
-
-img#test{
-    position: fixed;
-    right: -5000px;
-}
-
 @media screen and (max-width: 1000px){
     html{
         font-size: 40px;
@@ -91,25 +63,6 @@ img#test{
     div.container{
         width: 100%;
         margin: 0 auto;
-    }
-
-    img#pc1, img#pc2{
-        position: fixed;
-        right: -200%;
-    }
-
-    img#phone1, img#phone2{
-        position: static;
-        right: auto;
-        height: auto;
-    }
-
-    img#phone2{
-        opacity: 0;
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: auto;
     }
 
     button{
