@@ -3,16 +3,10 @@
 // x には横長画像、y には縦長画像を入れる
 // 拡張子は固定、名前は 1 から始まる数字
 
-const ext = ".png";
-const dir = "img/";
-const xImages = 5; // 横長画像の枚数
-const yImages = 5; // 縦長画像の枚数
 const maxWidth = 1000; // 縦長画像を表示する限界幅
 const isPc = window.innerWidth > maxWidth; // true or false
 const el1 = document.getElementById(isPc ? "pc1" : "phone1");
 const el2 = document.getElementById(isPc ? "pc2" : "phone2");
-const interval = 3000; // 画像切替周期（ミリ秒）
-const isRandom = true; // ランダム順に表示するかどうか（true でランダム、false だと 1 から順に表示）
 let intervalId;
 let finished = [false, false];
 let nth = 2; // 次に表示されるのは何枚めの画像か
