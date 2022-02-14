@@ -14,10 +14,6 @@ let nth = 2; // 次に表示されるのは何枚めの画像か
 const getRandom = () => {
     const max = isPc ? xImages : yImages;
     let random = 0;
-    // while(random === nth || random === 0){
-    //     // 前の画像と同じナンバーが出てしまったらやりなおし
-    //     random = Math.ceil(Math.random() * max);
-    // }
     do{
         // 前の画像と同じナンバーが出てしまったらやりなおし
         random = Math.ceil(Math.random() * max);
