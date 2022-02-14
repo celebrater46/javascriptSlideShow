@@ -12,22 +12,36 @@ const isPc = window.innerWidth > maxWidth; // true or false
 const el1 = document.getElementById(isPc ? "pc1" : "phone1");
 const el2 = document.getElementById(isPc ? "pc2" : "phone2");
 const interval = 3000; // 画像切替周期（ミリ秒）
+const isRandom = true; // ランダム順に表示するかどうか（true でランダム、false だと 1 から順に表示）
 let intervalId;
 let finished = [false, false];
 let nth = 2; // 次に表示されるのは何枚めの画像か
 
+const getRandom = () => {
+    const max = isPc ? xImages : yImages;
+    let random = 0;
+    while(random === nth || random === 0){
+        // 前の画像と同じナンバーが出てしまったらやりなおし
+        random = Math.ceil(Math.random() * max);
+    }
+    console.log("random: " + random);
+    return random;
+}
+
 const getNextImage = () => {
     const max = isPc ? xImages : yImages;
     const xy = isPc ? "x/" : "y/";
-    nth = nth >= max ? 1 : nth + 1;
-    console.log("getNextImage is working: " + dir + "x/" + nth.toString() + ext);
+    if(isRandom){
+        nth = getRandom();
+    } else {
+        nth = nth >= max ? 1 : nth + 1;
+    }
     return dir + xy + nth.toString() + ext;
 }
 
 const resetOpacity = () => {
     if(finished[0] && finished[1]){
-        const nextImage = el2.src;
-        el1.src = nextImage;
+        el1.src = el2.src;
         setTimeout(() => {
             el1.style.opacity = 1;
             el2.style.opacity = 0;
