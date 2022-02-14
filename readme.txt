@@ -37,7 +37,7 @@ setting.js の const isRandom を false にすると、画像が 1 から順番�
 <div class="jsss box"> と中の画像、
 <script type="text/javascript" src="setting.js"></script>
 <script type="text/javascript" src="main.js"></script>
-を移植する必要があります。
+を移植する必要があります（各ファイルへのリンクはディレクトリ構成に応じて書き換えます）。
 
 その際、setting.js の const dir をご自身のディレクトリ構成に応じて書き換えてください。
 
