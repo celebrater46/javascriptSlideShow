@@ -82,6 +82,17 @@ const changeImage = () => {
     }, 100);
 }
 
+const init = () => {
+    const xy = isPc ? "x/" : "y/";
+    let first = 1;
+    if(isRandom){
+        nth = getRandom();
+        first = getRandom();
+    }
+    el1.src = dir + xy + first.toString() + ext;
+    el2.src = dir + xy + nth.toString() + ext;
+}
+
 const startSlideShow = () => {
     intervalId = setInterval(changeImage, interval);
 }
@@ -89,3 +100,5 @@ const startSlideShow = () => {
 const stopSlideShow = () => {
     clearInterval(intervalId);
 }
+
+init();
