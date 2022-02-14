@@ -28,9 +28,18 @@ MITライセンスでの配布となります。
 横長画像は x フォルダ、縦長画像は y に放り込んでください。
 その際、名前は番号にしてください（例：1.png, 2.png ...）。
 
-main.js の const xImages と const yImages にそれぞれのフォルダに入れた画像の枚数を入力してください。
+setting.js の const xImages と const yImages にそれぞれのフォルダに入れた画像の枚数を入力してください。
 テスト用のボタンが組み込まれていますが、要らなければ適当に取っ払ってスクリプトを適当に書き換えてください。
-const isRandom を false にすると、画像が 1 から順番に表示されるようになります。true だとランダムになります。
+setting.js の const isRandom を false にすると、画像が 1 から順番に表示されるようになります。true だとランダムになります。
+
+ご自身で用意した HTML や PHP に組み込む場合、JSSS の index.html の中にある、
+<link rel="stylesheet" href="jsss.css" type="text/css">
+<div class="jsss box"> と中の画像、
+<script type="text/javascript" src="setting.js"></script>
+<script type="text/javascript" src="main.js"></script>
+を移植する必要があります。
+
+その際、setting.js の const dir をご自身のディレクトリ構成に応じて書き換えてください。
 
 
 
