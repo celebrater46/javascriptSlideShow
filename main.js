@@ -81,6 +81,7 @@ const changeImage = () => {
             resetOpacity();
         }
     }, 100);
+    // setTimeout(changeImage, interval);
 }
 
 const init = () => {
@@ -95,8 +96,10 @@ const init = () => {
 }
 
 const startSlideShow = () => {
+    // intervalId = setInterval(changeImage, interval);
     if(isWorking === false){
         intervalId = setInterval(changeImage, interval);
+        // setTimeout(changeImage, 1);
         isWorking = true;
     }
 }
@@ -108,7 +111,6 @@ const stopSlideShow = () => {
     el1.style.opacity = 1;
     el2.style.opacity = 0;
     console.log("clearInterval and reset opacities");
-    // reset = true;
     isWorking = false;
 }
 
