@@ -39,9 +39,6 @@ setting.js の const isRandom を false にすると、画像が 1 から順番�
 <script type="text/javascript" src="main.js"></script>
 を移植する必要があります（各ファイルへのリンクはディレクトリ構成に応じて書き換えます）。
 
-また、自動的にスライドショーが開始されるようにするには、
-HTML の main.js の宣言よりも下に <script>startSlideShow()</script> を追加する必要があります。
-
 その際、setting.js の const dir をご自身のディレクトリ構成に応じて書き換えてください。
 
 
