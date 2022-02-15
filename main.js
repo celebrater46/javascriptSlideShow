@@ -18,12 +18,10 @@ const getRandom = () => {
         // 前の画像と同じナンバーが出てしまったらやりなおし
         random = Math.ceil(Math.random() * max);
     } while(random === nth);
-    console.log("random: " + random);
     return random;
 }
 
 const getNextImage = () => {
-    console.log("getNextImage is working");
     const max = isPc ? xImages : yImages;
     const xy = isPc ? "x/" : "y/";
     if(isRandom){
@@ -35,10 +33,9 @@ const getNextImage = () => {
 }
 
 const resetOpacity = () => {
-    const wait = interval - 1000;
+    const wait = interval - 1000; // 1000 はフェードアウト＆フェードインの分
     if(finished[0] && finished[1]){
         el1.src = el2.src;
-        let completed = false;
         setTimeout(() => {
             el1.style.opacity = 1;
         }, Math.ceil(wait * 0.3));
@@ -47,10 +44,8 @@ const resetOpacity = () => {
         }, Math.ceil(wait * 0.6));
         setTimeout(() => {
             el2.src = getNextImage();
-            // completed = true;
             finished = [false, false];
         }, Math.ceil(wait * 0.9));
-        // console.log("Hello! JS proceeded to execulte this even the while is still working!");
     }
 }
 
@@ -83,7 +78,6 @@ const changeImage = () => {
             resetOpacity();
         }
     }, 100);
-    console.log("HELLO!!!!!!!!");
 }
 
 const init = () => {
