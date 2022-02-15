@@ -8,7 +8,11 @@ const isPc = window.innerWidth > maxWidth; // true or false
 const el1 = document.getElementById(isPc ? "pc1" : "phone1");
 const el2 = document.getElementById(isPc ? "pc2" : "phone2");
 let intervalId;
+let intervalOne;
+let intervalTwo;
 let finished = [false, false];
+// let reset = true; // ウィンドウがアクティブでない時、処理を実行したかどうか
+let isWorking = false; // スライドショーが動作してるか否か
 let nth = 2; // 次に表示されるのは何枚めの画像か
 
 const getRandom = () => {
@@ -57,23 +61,23 @@ const changeImage = () => {
         el2.style.opacity = 0;
     }
 
-    let opacityZero = el1.style.opacity * 100;
-    let intervalZero = setInterval(() => {
-        opacityZero = opacityZero - 10;
-        el1.style.opacity = opacityZero / 100;
+    let opacityOne = el1.style.opacity * 100;
+    intervalOne = setInterval(() => {
+        opacityOne = opacityOne - 10;
+        el1.style.opacity = opacityOne / 100;
         if(el1.style.opacity <= 0){
-            clearInterval(intervalZero);
+            clearInterval(intervalOne);
             finished[0] = true;
             resetOpacity();
         }
     }, 100);
 
-    let opacityOne = el2.style.opacity * 100;
-    let intervalOne = setInterval(() => {
-        opacityOne = opacityOne + 10;
-        el2.style.opacity = opacityOne / 100;
+    let opacityTwo = el2.style.opacity * 100;
+    intervalTwo = setInterval(() => {
+        opacityTwo = opacityTwo + 10;
+        el2.style.opacity = opacityTwo / 100;
         if(el2.style.opacity >= 1){
-            clearInterval(intervalOne);
+            clearInterval(intervalTwo);
             finished[1] = true;
             resetOpacity();
         }
@@ -92,11 +96,46 @@ const init = () => {
 }
 
 const startSlideShow = () => {
-    intervalId = setInterval(changeImage, interval);
+    if(isWorking === false){
+        intervalId = setInterval(changeImage, interval);
+        isWorking = true;
+    }
+    // ウィンドウがアクティブでない場合（他のタブを見ていたり、他のアプリがアクティブになっているなど）、Opacity を強制的にリセットする
+    // setInterval(() => {
+    //     if(document.hasFocus() === false){
+    //         if(reset === false){
+    //             clearInterval(intervalId);
+    //             clearInterval(intervalOne);
+    //             clearInterval(intervalTwo);
+    //             el1.style.opacity = 1;
+    //             el2.style.opacity = 0;
+    //             console.log("clearInterval and reset opacities");
+    //             reset = true;
+    //         }
+    //     } else {
+    //         if(reset){
+    //             intervalId = setInterval(changeImage, interval);
+    //             reset = false;
+    //         }
+    //     }
+    // }, 100);
 }
 
 const stopSlideShow = () => {
     clearInterval(intervalId);
+    clearInterval(intervalOne);
+    clearInterval(intervalTwo);
+    el1.style.opacity = 1;
+    el2.style.opacity = 0;
+    console.log("clearInterval and reset opacities");
+    // reset = true;
+    isWorking = false;
 }
+
+// ウィンドウがフォーカスになったら、処理をスタート
+window.addEventListener('focus', startSlideShow, false);
+
+// ウィンドウからフォーカスが外れたら、処理を停止
+window.addEventListener('blur', stopSlideShow, false);
 
 init();
