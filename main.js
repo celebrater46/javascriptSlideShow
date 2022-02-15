@@ -81,7 +81,6 @@ const changeImage = () => {
             resetOpacity();
         }
     }, 100);
-    // setTimeout(changeImage, interval);
 }
 
 const init = () => {
@@ -96,10 +95,8 @@ const init = () => {
 }
 
 const startSlideShow = () => {
-    // intervalId = setInterval(changeImage, interval);
     if(isWorking === false){
         intervalId = setInterval(changeImage, interval);
-        // setTimeout(changeImage, 1);
         isWorking = true;
     }
 }
