@@ -11,7 +11,6 @@ let intervalId;
 let intervalOne;
 let intervalTwo;
 let finished = [false, false];
-// let reset = true; // ウィンドウがアクティブでない時、処理を実行したかどうか
 let isWorking = false; // スライドショーが動作してるか否か
 let nth = 2; // 次に表示されるのは何枚めの画像か
 
@@ -100,25 +99,6 @@ const startSlideShow = () => {
         intervalId = setInterval(changeImage, interval);
         isWorking = true;
     }
-    // ウィンドウがアクティブでない場合（他のタブを見ていたり、他のアプリがアクティブになっているなど）、Opacity を強制的にリセットする
-    // setInterval(() => {
-    //     if(document.hasFocus() === false){
-    //         if(reset === false){
-    //             clearInterval(intervalId);
-    //             clearInterval(intervalOne);
-    //             clearInterval(intervalTwo);
-    //             el1.style.opacity = 1;
-    //             el2.style.opacity = 0;
-    //             console.log("clearInterval and reset opacities");
-    //             reset = true;
-    //         }
-    //     } else {
-    //         if(reset){
-    //             intervalId = setInterval(changeImage, interval);
-    //             reset = false;
-    //         }
-    //     }
-    // }, 100);
 }
 
 const stopSlideShow = () => {
