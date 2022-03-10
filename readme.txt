@@ -53,7 +53,7 @@ About JSSS (JavaScript Slide Show)
 Terms of service
 ##############################################
 
-This "JSSS (JavaScript Slide Show)" is the App that I "Enin Fujimi" developed for exhibition my novels.
+This "JSSS (JavaScript Slide Show)" is the App that I "Enin Fujimi" developed for exhibition my pictures.
 
 JSSS is MIT license.
 If specify a copyright, you can edit JSSS and give it out on the Web.
