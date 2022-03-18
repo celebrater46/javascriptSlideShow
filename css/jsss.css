@@ -43,28 +43,3 @@ img#test{
     right: -5000px;
 }
 
-@media screen and (max-width: 1000px){
-    div.jsss.box{
-        height: 150vw;
-    }
-
-    img#pc1, img#pc2{
-        position: fixed;
-        right: -2000vw;
-    }
-
-    img#phone1, img#phone2{
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: auto;
-    }
-
-    img#phone2{
-        opacity: 0;
-    }
-
-    img#none{
-        height: 95vw;
-    }
-}
